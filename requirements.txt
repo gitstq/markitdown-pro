@@ -1,0 +1,12 @@
+# MarkItDown-Pro - Core Requirements
+# This package uses zero dependencies for core functionality
+
+# Optional dependencies for enhanced format support:
+# pip install markitdown-pro[pdf]    # For PDF support (PyPDF2)
+# pip install markitdown-pro[docx]   # For DOCX support (python-docx)
+# pip install markitdown-pro[epub]   # For EPUB support (ebooklib)
+# pip install markitdown-pro[xlsx]   # For XLSX support (openpyxl)
+# pip install markitdown-pro[all]    # Install all optional dependencies
+
+# Development dependencies:
+# pip install -e ".[dev]"

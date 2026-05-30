@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markitdown-pro"
+version = "1.0.0"
+description = "🚀 MarkItDown-Pro - Lightweight Document to Markdown Conversion Engine"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "MarkItDown-Pro Team", email = "markitdown-pro@example.com"}
+]
+keywords = ["markdown", "converter", "pdf", "docx", "epub", "html", "csv", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+pdf = ["PyPDF2>=3.0.0"]
+docx = ["python-docx>=0.8.11"]
+epub = ["ebooklib>=0.18"]
+xlsx = ["openpyxl>=3.0.0"]
+all = [
+    "PyPDF2>=3.0.0",
+    "python-docx>=0.8.11",
+    "ebooklib>=0.18",
+    "openpyxl>=3.0.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.scripts]
+markitdown-pro = "markitdown_pro.cli:main"
+mdp = "markitdown_pro.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/markitdown-pro"
+Documentation = "https://github.com/gitstq/markitdown-pro#readme"
+Repository = "https://github.com/gitstq/markitdown-pro.git"
+Issues = "https://github.com/gitstq/markitdown-pro/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
